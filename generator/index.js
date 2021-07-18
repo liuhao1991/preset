@@ -143,7 +143,7 @@ module.exports = (api, options, rootOptions) => {
     // 创建模板
     api.render('./template-base', options);
     if (v2) {
-      api.render('./template-v2', options);
+      // api.render('./template-v2', options);
     } else {
       api.render('./template-v3', options);
     }

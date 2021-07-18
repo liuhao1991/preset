@@ -11,6 +11,6 @@ import store from "./store";
 
 const app = createApp(App);
 
-setupVendor(app);
+// setupVendor(app);
 
 app.use(store).use(router).mount("#app");
