@@ -154,8 +154,8 @@ module.exports = (api, options, rootOptions) => {
     }
 
     const deletePath = [
-        'src/assets/logo.png',
-        'src/components/HelloWorld.vue',
+      'src/assets/logo.png',
+      'src/components/HelloWorld.vue',
     ];
     api.render(files => {
       Object.keys(files).forEach(path => {
