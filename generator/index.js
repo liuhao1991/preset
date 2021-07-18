@@ -140,11 +140,11 @@ module.exports = (api, options, rootOptions) => {
     //     });
     // }
     // 删除 vue-cli3 默认目录
-    api.render((files) => {
-      Object.keys(files)
-        .filter((path) => path.startsWith('src/') || path.startsWith('public/'))
-        .forEach((path) => delete files[path]);
-    });
+    // api.render((files) => {
+    //   Object.keys(files)
+    //     .filter((path) => path.startsWith('src/') || path.startsWith('public/'))
+    //     .forEach((path) => delete files[path]);
+    // });
     // 创建模板
     api.render('./template-base', options);
     if (v2) {
@@ -152,6 +152,18 @@ module.exports = (api, options, rootOptions) => {
     } else {
       api.render('./template-v3', options);
     }
+
+    const deletePath = [
+        'src/assets/logo.png',
+        'src/components/HelloWorld.vue',
+    ];
+    api.render(files => {
+      Object.keys(files).forEach(path => {
+        if (deletePath.find(p => path.indexOf(p) === 0)) {
+          delete files[path];
+        }
+      });
+    });
 
     // 安装的 node-sass 包内缺少 vendor 文件夹
     // 需要执行 npm rebuild node-sass 生成
