@@ -139,14 +139,14 @@ module.exports = (api, options, rootOptions) => {
     // }
 
     // 创建模板
-    api.render('./template');
+    api.render('./template-base', options);
 
     api.render(files => {
-        Object.keys(files).forEach(path => {
-            if (deletePath.find(p => path.indexOf(p) === 0)) {
-                delete files[path];
-            }
-        });
+      Object.keys(files).forEach(path => {
+        if (deletePath.find(p => path.indexOf(p) === 0)) {
+          delete files[path];
+        }
+      });
     });
 
     // 安装的 node-sass 包内缺少 vendor 文件夹
