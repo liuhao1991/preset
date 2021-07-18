@@ -1,9 +1,9 @@
 let extends = [];
-<%_ if (options.version === 'v2') { _%>
-extends = ["plugin:vue/essential", "eslint:recommended", "@vue/prettier"];
-<%_ } else { _%>
+// <%_ if (options.version === 'v2') { _%>
+// extends = ["plugin:vue/essential", "eslint:recommended", "@vue/prettier"];
+// <%_ } else { _%>
 extends = ["plugin:vue/vue3-essential", "eslint:recommended", "@vue/prettier"];
-<%_ } _%>
+// <%_ } _%>
 
 module.exports = {
   root: true,
@@ -17,8 +17,6 @@ module.exports = {
   rules: {
     "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
-    <%_ if (options.version === 'v3') { _%>
     "vue/no-multiple-template-root": "off",
-    <%_ } _%>
   },
 };
