@@ -48,15 +48,15 @@ module.exports = (api, options, rootOptions) => {
     // }
   });
 
-  api.extendPackage({
-    dependencies: {
-      vue: '^3.0.5',
-      'vue-router': '^4.0.3'
-    },
-    devDependencies: {
-      '@vue/compiler-sfc': '^3.0.0',
-    }
-  });
+  // api.extendPackage({
+  //   dependencies: {
+  //     vue: '^3.0.5',
+  //     'vue-router': '^4.0.3'
+  //   },
+  //   devDependencies: {
+  //     '@vue/compiler-sfc': '^3.0.0',
+  //   }
+  // });
 
 
 
