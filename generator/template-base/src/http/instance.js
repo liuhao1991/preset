@@ -10,11 +10,12 @@ import axios from "axios";
 import qs from "qs";
 <%_ if (options.platform === 'mobile') { _%>
 import { Notify } from "vant";
-<%_ } _%>
-<%_ if (options.version === 'v2') { _%>
-import { Message } from 'element-ui';
-<%_ else { _%>
-import { ElMessage } from 'element-plus';
+<%_ } else { _%>
+  <%_ if (options.version === 'v2') { _%>
+  import { Message } from 'element-ui';
+  <%_ } else { _%>
+  import { ElMessage } from 'element-plus';
+  <%_ } _%>
 <%_ } _%>
 
 const service = axios.create({
