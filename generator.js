@@ -43,5 +43,29 @@ module.exports = (api, options, rootOptions) => {
     // }
   })
 
+  api.extendPackage(
+    {
+      dependencies: {
+        vue: null
+      },
+      devDependencies: {
+        'vue-template-compiler': null
+      }
+    },
+    {
+      prune: true
+    }
+  );
+
+  api.extendPackage({
+    dependencies: {
+      vue: '^3.0.5',
+      'vue-router': '^4.0.3'
+    },
+    devDependencies: {
+      '@vue/compiler-sfc': '^3.0.0',
+    }
+  });
+
   api.render('./template')
 }
