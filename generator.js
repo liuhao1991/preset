@@ -1,4 +1,9 @@
 module.exports = (api, options, rootOptions) => {
+  api.render(files => {
+    Object.keys(files)
+      .filter(path => path.startsWith('src/') || path.startsWith('public/'))
+      .forEach(path => delete files[path])
+  });
   api.extendPackage({
     'dependencies': {
       'axios': '^0.19.0',
@@ -41,21 +46,7 @@ module.exports = (api, options, rootOptions) => {
     //     'git add'
     //   ]
     // }
-  })
-
-  api.extendPackage(
-    {
-      dependencies: {
-        vue: null
-      },
-      devDependencies: {
-        'vue-template-compiler': null
-      }
-    },
-    {
-      prune: true
-    }
-  );
+  });
 
   api.extendPackage({
     dependencies: {
@@ -67,5 +58,11 @@ module.exports = (api, options, rootOptions) => {
     }
   });
 
-  api.render('./template')
+
+
+  api.render('./template');
+
+  api.onCreateComplete(() => {
+    process.env.VUE_CLI_SKIP_WRITE = true
+  });
 }
