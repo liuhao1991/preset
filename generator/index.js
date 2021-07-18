@@ -54,6 +54,7 @@ module.exports = (api, options, rootOptions) => {
     if (v2) {
       api.extendPackage({
         dependencies: {
+          vue: '^2.6.14',
           'vue-router': '^3.4.9',
           vuex: '^3.6.0',
         },
