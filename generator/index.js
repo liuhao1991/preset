@@ -68,7 +68,6 @@ module.exports = (api, options, rootOptions) => {
           vuex: '^4.0.0-0',
         },
         devDependencies: {
-          'vue-template-compiler': null,
           '@vue/compiler-sfc': '^3.0.0',
         },
       });
