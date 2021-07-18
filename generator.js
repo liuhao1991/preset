@@ -62,12 +62,6 @@ module.exports = (api, options, rootOptions) => {
 
   api.render('./template');
 
-  api.onCreateComplete(() => {
-    process.env.VUE_CLI_SKIP_WRITE = true
-  })
-}
-
-module.exports.hooks = (api) => {
   api.afterInvoke(() => {
     const { EOL } = require('os')
     const fs = require('fs')
@@ -79,4 +73,22 @@ module.exports.hooks = (api) => {
 
     fs.writeFileSync(api.resolve(api.entryFile), lines.join(EOL), { encoding: 'utf-8' })
   })
+
+  api.onCreateComplete(() => {
+    process.env.VUE_CLI_SKIP_WRITE = true
+  })
 }
+
+// module.exports.hooks = (api) => {
+//   api.afterInvoke(() => {
+//     const { EOL } = require('os')
+//     const fs = require('fs')
+//     const contentMain = fs.readFileSync(api.resolve(api.entryFile), { encoding: 'utf-8' })
+//     const lines = contentMain.split(/\r?\n/g)
+
+//     const renderIndex = lines.findIndex(line => line.match(/render/))
+//     lines[renderIndex] += `${EOL}  router,`
+
+//     fs.writeFileSync(api.resolve(api.entryFile), lines.join(EOL), { encoding: 'utf-8' })
+//   })
+// }
