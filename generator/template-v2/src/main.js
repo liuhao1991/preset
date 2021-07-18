@@ -4,9 +4,9 @@ import router from './router';
 import store from './store';
 
 <%_ if (options.platform === 'mobile') { _%>
-import setupVendor from '../../ui/vant';
+import '../../ui/vant';
 <%_ } else { _%>
-import setupVendor from '../../ui/element';
+import '../../ui/element';
 <%_ } _%>
 
 Vue.config.productionTip = false;
