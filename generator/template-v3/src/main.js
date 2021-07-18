@@ -2,5 +2,15 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
+<%_ if (options.platform === 'mobile') { _%>
+import setupVendor from '../../ui/vant-v3';
+<%_ } else { _%>
+import setupVendor from '../../ui/element-v3';
+<%_ } _%>
 
-createApp(App).use(store).use(router).mount("#app");
+
+const app = createApp(App);
+
+setupVendor(app);
+
+app.use(store).use(router).mount("#app");
