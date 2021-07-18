@@ -1,8 +1,8 @@
-const extends = ["eslint:recommended", "@vue/prettier"];
+let extends = [];
 <%_ if (options.version === 'v2') { _%>
-extends.concat([], ["plugin:vue/essential"], extends);
+extends = ["plugin:vue/essential", "eslint:recommended", "@vue/prettier"];
 <%_ } else { _%>
-extends.concat([], ["plugin:vue/vue3-essential"], extends);
+extends = ["plugin:vue/vue3-essential", "eslint:recommended", "@vue/prettier"];
 <%_ } _%>
 
 module.exports = {
