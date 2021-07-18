@@ -153,12 +153,6 @@ module.exports = (api, options, rootOptions) => {
       api.render('./template-v3', options);
     }
 
-    api.render((files) => {
-      Object.keys(files)
-        .filter((path) => path.startsWith('src/') || path.startsWith('public/'))
-        .forEach((path) => delete files[path]);
-    });
-
     // 安装的 node-sass 包内缺少 vendor 文件夹
     // 需要执行 npm rebuild node-sass 生成
     // if (options.ui === 'element') {

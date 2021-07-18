@@ -10,7 +10,7 @@ module.exports = {
   env: {
     node: true,
   },
-  extends,
+  extends: extends,
   parserOptions: {
     parser: "babel-eslint",
   },
