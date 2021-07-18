@@ -148,13 +148,13 @@ module.exports = (api, options, rootOptions) => {
       api.render('./template-v3', options);
     }
 
-    api.render(files => {
-      Object.keys(files).forEach(path => {
-        if (deletePath.find(p => path.indexOf(p) === 0)) {
-          delete files[path];
-        }
-      });
-    });
+    // api.render(files => {
+    //   Object.keys(files).forEach(path => {
+    //     if (deletePath.find(p => path.indexOf(p) === 0)) {
+    //       delete files[path];
+    //     }
+    //   });
+    // });
 
     // 安装的 node-sass 包内缺少 vendor 文件夹
     // 需要执行 npm rebuild node-sass 生成
