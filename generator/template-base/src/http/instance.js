@@ -10,12 +10,10 @@ import axios from "axios";
 import qs from "qs";
 <%_ if (options.platform === 'mobile') { _%>
 import { Notify } from "vant";
-<%_ } else { _%>
-  <%_ if (options.version === 'v2') { _%>
-  import { Message } from 'element-ui';
-  <%_ } else { _%>
-  import { ElMessage } from 'element-plus';
-  <%_ } _%>
+<%_ } else if (options.version === 'v2') { _%>
+import { Message } from 'element-ui';
+<%_ } else if (options.version === 'v3') { _%>
+import { ElMessage } from 'element-plus';
 <%_ } _%>
 
 const service = axios.create({
@@ -64,15 +62,14 @@ service.interceptors.response.use(
           type: "danger",
           duration: 4 * 1000,
         });
-        <%_ } _%>
-        <%_ if (options.version === 'v2') { _%>
+        <%_ } else if (options.version === 'v2') { _%>
         Message({
           showClose: true,
           message: res.message || "系统错误",
           type: 'error',
           duration: 4 * 1000,
         });
-        <%_ else { _%>
+        <%_ } else if (options.version === 'v3') { _%>
         ElMessage({
           showClose: true,
           message: res.message || "系统错误",
@@ -94,15 +91,14 @@ service.interceptors.response.use(
         type: "danger",
         duration: 4 * 1000,
       });
-      <%_ } _%>
-      <%_ if (options.version === 'v2') { _%>
+      <%_ } else if (options.version === 'v2') { _%>
       Message({
         showClose: true,
         message: "网络请求失败" || error.message,
         type: 'error',
         duration: 4 * 1000,
       });
-      <%_ else { _%>
+      <%_ } else if (options.version === 'v3') { _%>
       ElMessage({
         showClose: true,
         message: "网络请求失败" || error.message,
