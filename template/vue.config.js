@@ -1,3 +1,7 @@
+const isProd = () => {
+  return process.env.NODE_ENV === 'production';
+};
+
 module.exports = {
   /**
    * You can set by yourself according to actual condition
@@ -8,7 +12,7 @@ module.exports = {
    * Detail https://cli.vuejs.org/config/#publicPath
    *  publicPath: process.env.NODE_ENV === 'production' ? `/${pkg.name}/` : './'
    */
-  publicPath: process.env.BASE_PATH,
+  publicPath: process.env.BASE_URL,
   assetsDir: 'static',
   lintOnSave: process.env.NODE_ENV !== 'production',
   productionSourceMap: false,
@@ -44,10 +48,10 @@ module.exports = {
     sourceMap: isProd() ? true : false,
     // css预设器配置项
     loaderOptions: {
-      less: {
-        // 全局注入变量及mixins
-        additionalData: `@import "@/assets/style/variable.less";@import "@winner-fed/magicless/magicless.less";`,
-      }
+      // less: {
+      //   // 全局注入变量及mixins
+      //   additionalData: `@import "@/assets/style/variable.less";@import "@winner-fed/magicless/magicless.less";`,
+      // }
     }
   },
   configureWebpack: () => ({
@@ -116,41 +120,41 @@ module.exports = {
         return args;
       });
     // optimization
-    config
-      .when(process.env.NODE_ENV === 'production',
-        config => {
-          config
-            .plugin('ScriptExtHtmlWebpackPlugin')
-            .after('html')
-            .use('script-ext-html-webpack-plugin', [{
-              // `runtime` must same as runtimeChunk name. default is `runtime`
-              inline: /runtime\..*\.js$/
-            }])
-            .end();
+    // config
+    //   .when(process.env.NODE_ENV === 'production',
+    //     config => {
+    //       config
+    //         .plugin('ScriptExtHtmlWebpackPlugin')
+    //         .after('html')
+    //         .use('script-ext-html-webpack-plugin', [{
+    //           // `runtime` must same as runtimeChunk name. default is `runtime`
+    //           inline: /runtime\..*\.js$/
+    //         }])
+    //         .end();
 
-          config
-            .optimization
-            .splitChunks({
-              chunks: 'all',
-              cacheGroups: {
-                vendors: {
-                  name: 'chunk-vendors',
-                  test: /[\\/]node_modules[\\/]/,
-                  priority: 10,
-                  chunks: 'initial' // 只打包初始时依赖的第三方
-                },
-                commons: {
-                  name: 'chunk-commons',
-                  test: resolve('src/components'), // 可自定义拓展你的规则
-                  minChunks: 3, // 最小公用次数
-                  priority: 5,
-                  reuseExistingChunk: true
-                }
-              }
-            });
-          config.optimization.runtimeChunk('single');
-        }
-      );
+    //       config
+    //         .optimization
+    //         .splitChunks({
+    //           chunks: 'all',
+    //           cacheGroups: {
+    //             vendors: {
+    //               name: 'chunk-vendors',
+    //               test: /[\\/]node_modules[\\/]/,
+    //               priority: 10,
+    //               chunks: 'initial' // 只打包初始时依赖的第三方
+    //             },
+    //             commons: {
+    //               name: 'chunk-commons',
+    //               test: resolve('src/components'), // 可自定义拓展你的规则
+    //               minChunks: 3, // 最小公用次数
+    //               priority: 5,
+    //               reuseExistingChunk: true
+    //             }
+    //           }
+    //         });
+    //       config.optimization.runtimeChunk('single');
+    //     }
+    //   );
   },
   pluginOptions: {
     lintStyleOnBuild: true,
