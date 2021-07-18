@@ -140,6 +140,11 @@ module.exports = (api, options, rootOptions) => {
 
     // 创建模板
     api.render('./template-base', options);
+    if (v2) {
+
+    } else {
+      api.render('./template-v3', options);
+    }
 
     api.render(files => {
       Object.keys(files).forEach(path => {
