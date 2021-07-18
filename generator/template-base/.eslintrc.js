@@ -1,9 +1,16 @@
+const extends = ["eslint:recommended", "@vue/prettier"];
+<%_ if (options.version === 'v2') { _%>
+extends.concat([], ["plugin:vue/essential"], extends);
+<%_ } else { _%>
+extends.concat([], ["plugin:vue/vue3-essential"], extends);
+<%_ } _%>
+
 module.exports = {
   root: true,
   env: {
     node: true,
   },
-  extends: ["plugin:vue/vue3-essential", "eslint:recommended", "@vue/prettier"],
+  extends,
   parserOptions: {
     parser: "babel-eslint",
   },
