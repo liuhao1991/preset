@@ -31,7 +31,6 @@ module.exports = (api, options, rootOptions) => {
       "style-resources-loader": "^1.3.2",
       "stylelint": "^13.9.0",
       "stylelint-webpack-plugin": "^2.1.1",
-      "vue-template-compiler": "^2.6.11",
       "webpack-bundle-analyzer": "^4.3.0"
     }
     // // UI 框架
@@ -58,6 +57,9 @@ module.exports = (api, options, rootOptions) => {
           'vue-router': '^3.4.9',
           vuex: '^3.6.0',
         },
+        devDependencies:{
+          "vue-template-compiler": "^2.6.11",
+        }
       });
 
     } else {
