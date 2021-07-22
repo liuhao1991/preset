@@ -10,7 +10,7 @@ module.exports = {
     <%_ } else { _%>
     'plugin:vue/vue3-essential',
     <%_ } _%>
-    '@vue/standard',
+    '@vue/prettier',
   ],
   parserOptions: {
     parser: "babel-eslint",

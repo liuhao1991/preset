@@ -42,7 +42,7 @@ module.exports = (api, options, rootOptions) => {
       }
     } else {
       if (v2) {
-        dependencies['vant'] = '^2.15.0';
+        dependencies['vant'] = '^2.8.7';
       } else {
         dependencies['vant'] = '^3.0.0-beta.1';
       }

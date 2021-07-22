@@ -8,12 +8,12 @@
 import axios from "axios";
 
 import qs from "qs";
-<%_ if (options.platform === 'mobile') { _%>
+<%_ if (options.platform === "mobile") { _%>
 import { Notify } from "vant";
-<%_ } else if (options.version === 'v2') { _%>
-import { Message } from 'element-ui';
-<%_ } else if (options.version === 'v3') { _%>
-import { ElMessage } from 'element-plus';
+<%_ } else if (options.version === "v2") { _%>
+import { Message } from "element-ui";
+<%_ } else if (options.version === "v3") { _%>
+import { ElMessage } from "element-plus";
 <%_ } _%>
 
 const service = axios.create({
@@ -56,24 +56,24 @@ service.interceptors.response.use(
       // console.log(+res.status)
       // if the custom code is not 20000, it is judged as an error.
       if (res.code && res.code !== 0 && +res.status !== 1) {
-        <%_ if (options.platform === 'mobile') { _%>
+        <%_ if (options.platform === "mobile") { _%>
         Notify({
           message: res.message || "系统错误",
           type: "danger",
           duration: 4 * 1000,
         });
-        <%_ } else if (options.version === 'v2') { _%>
+        <%_ } else if (options.version === "v2") { _%>
         Message({
           showClose: true,
           message: res.message || "系统错误",
-          type: 'error',
+          type: "error",
           duration: 4 * 1000,
         });
-        <%_ } else if (options.version === 'v3') { _%>
+        <%_ } else if (options.version === "v3") { _%>
         ElMessage({
           showClose: true,
           message: res.message || "系统错误",
-          type: 'error',
+          type: "error",
           duration: 4 * 1000,
         });
         <%_ } _%>
@@ -85,24 +85,24 @@ service.interceptors.response.use(
   },
   (error) => {
     if (!axios.isCancel(error)) {
-      <%_ if (options.platform === 'mobile') { _%>
+      <%_ if (options.platform === "mobile") { _%>
       Notify({
         message: "网络请求失败" || error.message,
         type: "danger",
         duration: 4 * 1000,
       });
-      <%_ } else if (options.version === 'v2') { _%>
+      <%_ } else if (options.version === "v2") { _%>
       Message({
         showClose: true,
         message: "网络请求失败" || error.message,
-        type: 'error',
+        type: "error",
         duration: 4 * 1000,
       });
-      <%_ } else if (options.version === 'v3') { _%>
+      <%_ } else if (options.version === "v3") { _%>
       ElMessage({
         showClose: true,
         message: "网络请求失败" || error.message,
-        type: 'error',
+        type: "error",
         duration: 4 * 1000,
       });
       <%_ } _%>

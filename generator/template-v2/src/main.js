@@ -1,12 +1,12 @@
-import Vue from 'vue';
-import App from './App.vue';
-import router from './router';
-import store from './store';
+import Vue from "vue";
+import App from "./App.vue";
+import router from "./router";
+import store from "./store";
 
-<%_ if (options.platform === 'pc') { _%>
-import './vendor/element';
+<%_ if (options.platform === "pc") { _%>
+import "./vendor/element";
 <%_ } else { _%>
-import  './vendor/vant';
+import  "./vendor/vant";
 <%_ } _%>
 
 Vue.config.productionTip = false;
@@ -16,4 +16,4 @@ new Vue({
   router,
   store,
   render: h => h(App),
-}).$mount('#app');
+}).$mount("#app");
