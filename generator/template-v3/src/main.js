@@ -2,10 +2,10 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
-<%_ if (options.platform === 'mobile') { _%>
-import setupVendor from '../../ui/vant-v3';
+<%_ if (options.platform === 'pc') { _%>
+import setupVendor from './vendor/element-v3';
 <%_ } else { _%>
-import setupVendor from '../../ui/element-v3';
+import setupVendor from './vendor/vant-v3';
 <%_ } _%>
 
 

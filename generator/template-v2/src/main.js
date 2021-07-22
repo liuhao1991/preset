@@ -3,10 +3,10 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 
-<%_ if (options.platform === 'mobile') { _%>
-import '../../ui/vant';
+<%_ if (options.platform === 'pc') { _%>
+import './vendor/element';
 <%_ } else { _%>
-import '../../ui/element';
+import  './vendor/vant';
 <%_ } _%>
 
 Vue.config.productionTip = false;
