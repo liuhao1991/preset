@@ -21,8 +21,8 @@ module.exports = (api, options, rootOptions) => {
       "babel-eslint": "^10.1.0",
       "babel-plugin-transform-remove-console": "^6.9.4",
       "babel-plugin-transform-remove-debugger": "^6.9.4",
+      "@babel/plugin-proposal-optional-chaining": "^7.14.5",
       "eslint": "^6.7.2",
-      "eslint-config-tpconfig": "^0.x",
       "eslint-plugin-prettier": "^3.3.1",
       "eslint-plugin-vue": "^7.0.0-0",
       "less": "^3.0.4",
@@ -41,11 +41,17 @@ module.exports = (api, options, rootOptions) => {
         dependencies['element-plus'] = '^1.0.1-beta.27';
       }
     } else {
+
       if (v2) {
         dependencies['vant'] = '^2.8.7';
       } else {
         dependencies['vant'] = '^3.0.0-beta.1';
       }
+      api.extendPackage({
+        devDependencies = {
+          'babel-plugin-import': '^1.13.0'
+        }
+      });
     }
     api.extendPackage({
       dependencies,
@@ -62,7 +68,6 @@ module.exports = (api, options, rootOptions) => {
           "vue-template-compiler": "^2.6.11",
         }
       });
-
     } else {
       api.extendPackage({
         dependencies: {
@@ -130,14 +135,14 @@ module.exports = (api, options, rootOptions) => {
     // });
 
     // UI 框架
-    // if (options.ui === 'element') {
-    //     // element 替换主题色需要使用 sass
-    //     api.extendPackage({
-    //         devDependencies: {
-    //             'sass-loader': '^7.1.0',
-    //             'node-sass': '^4.14.1',
-    //         },
-    //     });
+    // if (!mobile) {
+    //   // element 替换主题色需要使用 sass
+    //   api.extendPackage({
+    //     devDependencies: {
+    //       'sass-loader': '^7.1.0',
+    //       'node-sass': '^4.14.1',
+    //     },
+    //   });
     // }
     // 删除 vue-cli3 默认目录
     // api.render((files) => {
@@ -145,6 +150,27 @@ module.exports = (api, options, rootOptions) => {
     //     .filter((path) => path.startsWith('src/') || path.startsWith('public/'))
     //     .forEach((path) => delete files[path]);
     // });
+    api.render((files) => {
+      Object.keys(files)
+        .filter((path) => path.startsWith('src/') || path.startsWith('public/'))
+        .forEach((path) => delete files[path]);
+    });
+
+    if (mobile) {
+      if (options.version === 'v2') {
+        api.render('../ui/vant');
+      } else {
+        api.render('../ui/vant-v3');
+      }
+      api.injectImports('src/vendor/index.js', `import './vant.js'`);
+    } else {
+      if (options.preset === 'v2') {
+        api.render('../ui/element');
+      } else {
+        api.render('../ui/element-v3');
+      }
+    }
+    api.onCreateComplete(() => {});
     // 创建模板
     api.render('./template-base', options);
     if (v2) {
@@ -153,17 +179,17 @@ module.exports = (api, options, rootOptions) => {
       api.render('./template-v3', options);
     }
 
-    const deletePath = [
-      'src/assets/logo.png',
-      'src/components/HelloWorld.vue',
-    ];
-    api.render(files => {
-      Object.keys(files).forEach(path => {
-        if (deletePath.find(p => path.indexOf(p) === 0)) {
-          delete files[path];
-        }
-      });
-    });
+    // const deletePath = [
+    //   'src/assets/logo.png',
+    //   'src/components/HelloWorld.vue',
+    // ];
+    // api.render(files => {
+    //   Object.keys(files).forEach(path => {
+    //     if (deletePath.find(p => path.indexOf(p) === 0)) {
+    //       delete files[path];
+    //     }
+    //   });
+    // });
 
     // 安装的 node-sass 包内缺少 vendor 文件夹
     // 需要执行 npm rebuild node-sass 生成
