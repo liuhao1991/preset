@@ -48,7 +48,7 @@ module.exports = (api, options, rootOptions) => {
         dependencies['vant'] = '^3.0.0-beta.1';
       }
       api.extendPackage({
-        devDependencies = {
+        devDependencies: {
           'babel-plugin-import': '^1.13.0'
         }
       });
