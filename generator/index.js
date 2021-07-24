@@ -162,7 +162,7 @@ module.exports = (api, options, rootOptions) => {
       } else {
         api.render('../ui/vant-v3');
       }
-      api.injectImports('src/vendor/index.js', `import './vant.js'`);
+      // api.injectImports('src/vendor/index.js', `import './vant.js'`);
     } else {
       if (options.version === 'v2') {
         api.render('../ui/element');
