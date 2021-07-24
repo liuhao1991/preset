@@ -21,5 +21,12 @@ module.exports = {
     <%_ if (options.version === 'v3') { _%>
     "vue/no-multiple-template-root": "off",
     <%_ } _%>
+    "prettier/prettier": [
+      "error",
+      {
+        semi: true,
+        endOfLine: "auto",
+      },
+    ],
   },
 };

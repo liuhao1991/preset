@@ -1,9 +1,10 @@
 {
-  "semi": false,
+  "semi": true,
   "useTabs": false,
   "tabWidth": 2,
   "printWidth": 100,
   "singleQuote": false,
+  "trailingComma": "es5",
   "proseWrap": "never",
   "quoteProps": "as-needed",
   "arrowParens": "always",
@@ -11,7 +12,7 @@
   "htmlWhitespaceSensitivity": "strict",
   "insertPragma": false,
   "requirePragma": false,
-  "endOfLine": "lf",
+  "endOfLine": "crlf",
   "rangeStart": 0,
   "overrides": [
     {
@@ -21,8 +22,8 @@
     {
       "files": ["*.less", "*.css"],
       "options": {
-       "parser": "vue",
-       "singleQuote": false
+        "parser": "vue",
+        "singleQuote": false
       }
     }
   ]

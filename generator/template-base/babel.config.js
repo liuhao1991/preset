@@ -1,6 +1,6 @@
 const plugins = ["@babel/plugin-proposal-optional-chaining"];
 
-<%_ if (options.platform === 'pc') { _%>
+<%_ if (options.platform === 'mobile') { _%>
 plugins.push(
   ['import', {
     libraryName: 'vant',
