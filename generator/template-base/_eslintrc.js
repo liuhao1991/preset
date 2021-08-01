@@ -23,6 +23,7 @@ module.exports = {
     'vue/html-quotes': ['error', 'double', { avoidEscape: false }],
     'vue/no-spaces-around-equal-signs-in-attribute': ['error'],
     'vue/require-default-prop': ['error'],
+    'vue/require-prop-types': ['error'],
     'vue/max-attributes-per-line': [
       'error',
       {
