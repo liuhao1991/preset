@@ -10,6 +10,7 @@ module.exports = (api, options, rootOptions) => {
       qs: '^6.7.0',
       axios: '^0.21.0',
       'normalize.css': '^8.0.1',
+      dayjs: '^1.10.6',
     };
 
     const devDependencies = {
