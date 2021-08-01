@@ -10,24 +10,25 @@ module.exports = (api, options, rootOptions) => {
       qs: '^6.7.0',
       axios: '^0.21.0',
       'normalize.css': '^8.0.1',
-      'less-loader': '^7.3.0',
     };
 
     const devDependencies = {
       "@vue/cli-plugin-babel": "~4.5.0",
       "@vue/cli-plugin-eslint": "~4.5.0",
-      "@vue/cli-service": "~4.5.0",
-      "@vue/eslint-config-prettier": "^6.0.0",
+      "@vue/cli-plugin-router": "~4.5.0",
+      "@vue/cli-plugin-vuex": "~4.5.0",
+      "@vue/eslint-config-standard": "^5.1.2",
+      "@babel/plugin-proposal-optional-chaining": "^7.14.5",
       "babel-eslint": "^10.1.0",
       "babel-plugin-transform-remove-console": "^6.9.4",
       "babel-plugin-transform-remove-debugger": "^6.9.4",
-      "@babel/plugin-proposal-optional-chaining": "^7.14.5",
       "eslint": "^6.7.2",
-      "eslint-plugin-prettier": "^3.3.1",
-      "eslint-plugin-vue": "^7.0.0-0",
+      "eslint-plugin-standard": "^4.0.0",
+      "eslint-plugin-import": "^2.20.2",
+      "eslint-plugin-node": "^11.1.0",
+      "eslint-plugin-promise": "^4.2.1",
       "less": "^3.0.4",
       "less-loader": "^5.0.0",
-      "prettier": "^2.2.1",
       "style-resources-loader": "^1.3.2",
       "stylelint": "^13.9.0",
       "stylelint-webpack-plugin": "^2.1.1",
@@ -47,11 +48,6 @@ module.exports = (api, options, rootOptions) => {
       } else {
         dependencies['vant'] = '^3.0.0-beta.1';
       }
-      api.extendPackage({
-        devDependencies: {
-          'babel-plugin-import': '^1.13.0'
-        }
-      });
     }
     api.extendPackage({
       dependencies,
@@ -66,6 +62,7 @@ module.exports = (api, options, rootOptions) => {
         },
         devDependencies:{
           "vue-template-compiler": "^2.6.11",
+          "eslint-plugin-vue": "^6.2.2",
         }
       });
     } else {
@@ -77,6 +74,7 @@ module.exports = (api, options, rootOptions) => {
         },
         devDependencies: {
           '@vue/compiler-sfc': '^3.0.0',
+          "eslint-plugin-vue": "^7.0.0",
         },
       });
     }
