@@ -5,7 +5,7 @@ module.exports = (api, options, rootOptions) => {
   const mobile = options.platform === 'mobile'
   // options.ui = options.ui || 'none';
 
-  aqi.extendPackage({
+  api.extendPackage({
     lint: 'vue-cli-service lint'
   })
   // 添加依赖
