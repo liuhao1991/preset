@@ -12,13 +12,13 @@ module.exports = {
     '@vue/standard'
   ],
   parserOptions: {
-    parser: "babel-eslint",
+    parser: 'babel-eslint',
   },
   rules: {
-    "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
-    "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
+    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     <%_ if (options.version === 'v3') { _%>
-    "vue/no-multiple-template-root": "off", // off | error
+    'vue/no-multiple-template-root': 'off', // off | error
     <%_ } _%>
     'vue/html-quotes': ['error', 'double', { avoidEscape: false }],
     'vue/no-spaces-around-equal-signs-in-attribute': ['error'],
@@ -37,8 +37,8 @@ module.exports = {
         }
       }
     ],
-    "vue/html-indent": [
-      "error",
+    'vue/html-indent': [
+      'error',
       2,
       {
         attribute: 1,
@@ -48,26 +48,26 @@ module.exports = {
         ignores: [],
       },
     ],
-     "vue/html-closing-bracket-newline": [
-      "error",
+     'vue/html-closing-bracket-newline': [
+      'error',
       {
-        singleline: "never",
-        multiline: "always",
+        singleline: 'never',
+        multiline: 'always',
       },
     ],
-    "vue/singleline-html-element-content-newline": [
-      "error",
+    'vue/singleline-html-element-content-newline': [
+      'error',
       {
         ignoreWhenNoAttributes: false,
         ignoreWhenEmpty: false,
-        ignores: ["pre", "textarea"],
+        ignores: ['pre', 'textarea'],
       },
     ],
-    "vue/no-unused-components": [
-      "error",
+    'vue/no-unused-components': [
+      'error',
       {
         ignoreWhenBindingPresent: true,
       },
     ],
   },
-};
+}

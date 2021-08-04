@@ -1,4 +1,4 @@
-const plugins = ["@babel/plugin-proposal-optional-chaining"];
+const plugins = ['@babel/plugin-proposal-optional-chaining']
 
 <%_ if (options.platform === 'mobile') { _%>
 plugins.push(
@@ -7,9 +7,9 @@ plugins.push(
     libraryDirectory: 'es',
     style: true
   }, 'vant']
-);<%_ } _%>
+)<%_ } _%>
 
 module.exports = {
-  presets: ["@vue/cli-plugin-babel/preset"],
-  plugins,
-};
+  presets: ['@vue/cli-plugin-babel/preset'],
+  plugins
+}

@@ -1,15 +1,15 @@
-import instance from "./instance";
+import instance from './instance'
 
 export function getWechatJssdk(options) {
   return instance({
-    method: "POST",
-    url: "/wechat/jssdk",
-  })(options);
+    method: 'POST',
+    url: '/wechat/jssdk',
+  })(options)
 }
 
 export function getSubscribeStatus(options) {
   return instance({
-    method: "POST",
-    url: `/wechat/subscribe`,
-  })(options);
+    method: 'POST',
+    url: '/wechat/subscribe',
+  })(options)
 }

@@ -12,16 +12,16 @@ module.exports = [
     type: 'list',
     message: 'Choose a version of Vue.js',
     choices: [
-        {
-          name: '2.x',
-          value: 'v2',
-        },
-        {
-          name: '3.x',
-          value: 'v3',
-        },
+      {
+        name: '2.x',
+        value: 'v2'
+      },
+      {
+        name: '3.x',
+        value: 'v3'
+      }
     ],
-    default: 'v3',
+    default: 'v3'
   },
   {
     name: 'platform',
@@ -35,8 +35,8 @@ module.exports = [
       {
         name: 'mobile',
         value: 'mobile'
-      },
+      }
     ],
     default: 'pc'
-  },
+  }
 ];
