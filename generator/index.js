@@ -6,14 +6,16 @@ module.exports = (api, options, rootOptions) => {
   // options.ui = options.ui || 'none';
 
   api.extendPackage({
-    lint: 'vue-cli-service lint'
+    scripts: {
+      lint: 'vue-cli-service lint'
+    }
   })
   // 添加依赖
   const dependencies = {
     qs: '^6.7.0',
     axios: '^0.21.0',
     'normalize.css': '^8.0.1',
-    dayjs: '^1.10.6',
+    dayjs: '^1.10.6'
   }
 
   const devDependencies = {
@@ -67,11 +69,11 @@ module.exports = (api, options, rootOptions) => {
       dependencies: {
         vue: '^2.6.14',
         'vue-router': '^3.4.9',
-        vuex: '^3.6.0',
+        vuex: '^3.6.0'
       },
       devDependencies:{
         'vue-template-compiler': '^2.6.11',
-        'eslint-plugin-vue': '^6.2.2',
+        'eslint-plugin-vue': '^6.2.2'
       }
     })
   } else {
@@ -79,12 +81,12 @@ module.exports = (api, options, rootOptions) => {
       dependencies: {
         vue: '^3.0.0',
         'vue-router': '^4.0.0-0',
-        vuex: '^4.0.0-0',
+        vuex: '^4.0.0-0'
       },
       devDependencies: {
         '@vue/compiler-sfc': '^3.0.0',
-        'eslint-plugin-vue': '^7.0.0',
-      },
+        'eslint-plugin-vue': '^7.0.0'
+      }
     })
   }
 
@@ -115,17 +117,17 @@ module.exports = (api, options, rootOptions) => {
   // git hook and commitlint
   api.extendPackage({
     scripts: {
-      stylelint: 'stylelint \'src/**/*.{vue,html,css,less,scss,sass}\' --fix',
+      stylelint: 'stylelint \'src/**/*.{vue,html,css,less,scss,sass}\' --fix'
     },
     husky: {
       hooks: {
-        'pre-commit': 'lint-staged',
+        'pre-commit': 'lint-staged'
         // 'commit-msg': 'commitlint -E HUSKY_GIT_PARAMS',
-      },
+      }
     },
     'lint-staged': {
       '*.{js,vue}': 'npm run lint',
-      '*.{vue,html,css,less,scss,sass}': 'npm run stylelint',
+      '*.{vue,html,css,less,scss,sass}': 'npm run stylelint'
     },
     // config: {
     //   commitizen: {
@@ -137,8 +139,8 @@ module.exports = (api, options, rootOptions) => {
       // '@commitlint/config-conventional': '^11.0.0',
       // 'cz-conventional-changelog': '^3.3.0',
       husky: '^4.3.8',
-      'lint-staged': '^10.5.3',
-    },
+      'lint-staged': '^10.5.3'
+    }
   })
 
   // UI 框架

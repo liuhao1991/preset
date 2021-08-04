@@ -17,6 +17,8 @@ module.exports = {
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'comma-dangle': ['error', 'never'],
+    'space-before-function-paren': ['error', 'always'],
     <%_ if (options.version === 'v3') { _%>
     'vue/no-multiple-template-root': 'off', // off | error
     <%_ } _%>

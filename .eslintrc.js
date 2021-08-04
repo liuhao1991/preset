@@ -11,6 +11,8 @@ module.exports = {
   rules: {
     indent: ['error', 2],
     'no-unused-vars': 'off',
+    'comma-dangle': ['error', 'never'],
+    'space-before-function-paren': ['error', 'always'],
     quotes: ['error', 'single'],
     semi: ['error', 'never'],
 
