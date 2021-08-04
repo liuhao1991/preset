@@ -1,7 +1,7 @@
 {
   "useTaobaoRegistry": true,
   "packageManager": "yarn",
-  "useConfigFiles": true,
+  "useConfigFiles": false,
   "router": false,
   "vuex": false,
   "cssPreprocessor": "less",
