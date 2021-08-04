@@ -12,11 +12,6 @@
     "deploy": "bash ./docs/deploy.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.md": "prettier --write",
     "*.{js,vue,less,css,ts,tsx}": "prettier --write"

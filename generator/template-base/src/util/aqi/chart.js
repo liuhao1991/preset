@@ -624,21 +624,21 @@ const handlerCOChart = (data) => {
 
 export const handleAirLineChartOption = (data, varID) => {
   switch (varID) {
-    case 'AQI':
-      return handlerAqiChart(data)
-    case 'PM25':
-      return handlerPM25Chart(data)
-    case 'PM10':
-      return handlerPM10Chart(data)
-    case 'O3':
-      return handlerO3Chart(data)
-    case 'NO2':
-      return handlerNO2Chart(data)
-    case 'SO2':
-      return handlerSO2Chart(data)
-    case 'CO':
-      return handlerCOChart(data)
-    default:
-      return handlerAqiChart(data)
+  case 'AQI':
+    return handlerAqiChart(data)
+  case 'PM25':
+    return handlerPM25Chart(data)
+  case 'PM10':
+    return handlerPM10Chart(data)
+  case 'O3':
+    return handlerO3Chart(data)
+  case 'NO2':
+    return handlerNO2Chart(data)
+  case 'SO2':
+    return handlerSO2Chart(data)
+  case 'CO':
+    return handlerCOChart(data)
+  default:
+    return handlerAqiChart(data)
   }
 }

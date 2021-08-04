@@ -9,8 +9,8 @@ import setupVendor from './vendor/vant-v3'
 <%_ } _%>
 
 
-const app = createApp(App);
+const app = createApp(App)
 
 setupVendor(app);
 
-app.use(store).use(router).mount('#app');
+app.use(store).use(router).mount('#app')
