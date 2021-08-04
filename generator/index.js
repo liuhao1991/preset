@@ -117,7 +117,7 @@ module.exports = (api, options, rootOptions) => {
   // git hook and commitlint
   api.extendPackage({
     scripts: {
-      stylelint: 'stylelint \'src/**/*.{vue,html,css,less,scss,sass}\' --fix'
+      // stylelint: 'stylelint \'src/**/*.{vue,html,css,less,scss,sass}\' --fix'
     },
     husky: {
       hooks: {
@@ -127,7 +127,7 @@ module.exports = (api, options, rootOptions) => {
     },
     'lint-staged': {
       '*.{js,vue}': 'npm run lint',
-      '*.{vue,html,css,less,scss,sass}': 'npm run stylelint'
+      // '*.{vue,html,css,less,scss,sass}': 'npm run stylelint'
     },
     // config: {
     //   commitizen: {
