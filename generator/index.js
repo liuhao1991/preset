@@ -126,7 +126,7 @@ module.exports = (api, options, rootOptions) => {
       }
     },
     'lint-staged': {
-      '*.{js,vue}': 'npm run lint',
+      '*.{js,vue}': 'npm run lint'
       // '*.{vue,html,css,less,scss,sass}': 'npm run stylelint'
     },
     // config: {
