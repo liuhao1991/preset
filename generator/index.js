@@ -127,15 +127,15 @@ module.exports = (api, options, rootOptions) => {
       '*.{js,vue}': 'npm run lint',
       '*.{vue,html,css,less,scss,sass}': 'npm run stylelint',
     },
-    config: {
-      commitizen: {
-        path: './node_modules/cz-conventional-changelog',
-      },
-    },
+    // config: {
+    //   commitizen: {
+    //     path: './node_modules/cz-conventional-changelog',
+    //   },
+    // },
     devDependencies: {
-      '@commitlint/cli': '^11.0.0',
-      '@commitlint/config-conventional': '^11.0.0',
-      'cz-conventional-changelog': '^3.3.0',
+      // '@commitlint/cli': '^11.0.0',
+      // '@commitlint/config-conventional': '^11.0.0',
+      // 'cz-conventional-changelog': '^3.3.0',
       husky: '^4.3.8',
       'lint-staged': '^10.5.3',
     },
