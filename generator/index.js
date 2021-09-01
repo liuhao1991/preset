@@ -52,7 +52,7 @@ module.exports = (api, options, rootOptions) => {
     if (v2) {
       dependencies['vant'] = '^2.8.7'
     } else {
-      dependencies['vant'] = '^3.0.0-beta.1'
+      dependencies['vant'] = '^3.2.1'
     }
     api.extendPackage({
       devDependencies: {
@@ -79,12 +79,12 @@ module.exports = (api, options, rootOptions) => {
   } else {
     api.extendPackage({
       dependencies: {
-        vue: '^3.0.0',
-        'vue-router': '^4.0.0-0',
-        vuex: '^4.0.0-0'
+        vue: '^3.2.6',
+        'vue-router': '^4.0.11',
+        vuex: '^4.0.2'
       },
       devDependencies: {
-        '@vue/compiler-sfc': '^3.0.0',
+        '@vue/compiler-sfc': '^3.2.6',
         'eslint-plugin-vue': '^7.0.0'
       }
     })
