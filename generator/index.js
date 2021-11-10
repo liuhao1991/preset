@@ -45,7 +45,7 @@ module.exports = (api, options, rootOptions) => {
     if (v2) {
       dependencies['element-ui'] = '^2.15.0'
     } else {
-      dependencies['element-plus'] = '^1.0.2-beta.69'
+      dependencies['element-plus'] = '^1.2.0-beta.3'
     }
   } else {
 
