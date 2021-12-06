@@ -2,7 +2,7 @@
  * @Author: lh@metgs.com
  * @Date: 2020-08-24 09:19:04
  * @LastEditors: lh@metgs.com
- * @LastEditTime: 2021-07-06 15:41:04
+ * @LastEditTime: 2021-12-06 11:32:23
  * @Description: axios封装
  */
 import axios from 'axios'
@@ -17,7 +17,7 @@ import { ElMessage } from 'element-plus'
 <%_ } _%>
 
 const service = axios.create({
-  baseURL: process.env.VUE_APP_URL,
+  baseURL: process.env.VUE_APP_API_BASE,
   headers: {
     'Content-Type': 'application/x-www-form-urlencoded',
   },

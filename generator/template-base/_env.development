@@ -1,5 +1,5 @@
 
-VUE_APP_BASE_API = '/api'
+VUE_APP_API_BASE = '/api'
 
 // With this configuration, vue-cli uses babel-plugin-dynamic-import-node
 // It only does one thing by converting all import() to require()

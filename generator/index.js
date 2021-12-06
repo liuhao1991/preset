@@ -52,7 +52,7 @@ module.exports = (api, options, rootOptions) => {
     if (v2) {
       dependencies['vant'] = '^2.8.7'
     } else {
-      dependencies['vant'] = '^3.2.1'
+      dependencies['vant'] = '^v3.3.6'
     }
     api.extendPackage({
       devDependencies: {
@@ -81,7 +81,7 @@ module.exports = (api, options, rootOptions) => {
       dependencies: {
         vue: '^3.2.6',
         'vue-router': '^4.0.11',
-        vuex: '^4.0.2'
+        pinia: '^2.0.6'
       },
       devDependencies: {
         '@vue/compiler-sfc': '^3.2.6',
