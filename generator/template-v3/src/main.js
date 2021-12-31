@@ -8,6 +8,7 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import App from './App.vue'
+import router from './router'
 <%_ if (options.platform === 'pc') { _%>
 import setupVendor from './vendor/element-v3'
 <%_ } else { _%>
