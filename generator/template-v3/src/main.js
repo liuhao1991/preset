@@ -14,7 +14,7 @@ import setupVendor from './vendor/element-v3'
 <%_ } else { _%>
 import setupVendor from './vendor/vant-v3'
 <%_ } _%>
-
+import 'normalize.css'
 const app = createApp(App)
 
 setupVendor(app)
