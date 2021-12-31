@@ -8,7 +8,7 @@ import './vendor/element'
 <%_ } else { _%>
 import  './vendor/vant'
 <%_ } _%>
-
+import 'normalize.css'
 Vue.config.productionTip = false
 
 
