@@ -38,7 +38,8 @@ module.exports = (api, options, rootOptions) => {
     'style-resources-loader': '^1.3.2',
     'stylelint': '^13.9.0',
     'stylelint-webpack-plugin': '^2.1.1',
-    'webpack-bundle-analyzer': '^4.3.0'
+    'webpack-bundle-analyzer': '^4.3.0',
+    "prettier": "^2.2.1"
   }
   // // UI 框架
   if (!mobile) {
