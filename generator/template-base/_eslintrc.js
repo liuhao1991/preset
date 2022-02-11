@@ -2,12 +2,10 @@
  * @Author: lh@metgs.com
  * @Date: 2021-12-06 11:29:39
  * @LastEditors: lh@metgs.com
- * @LastEditTime: 2022-02-10 17:11:50
+ * @LastEditTime: 2022-02-11 14:51:03
  * @Description: ...
  */
 let isProduction = process.env.NODE_ENV === 'production';
-const os = require('os');
-const isWindows = os.platform() === 'win32';
 module.exports = {
   root: true,
   env: {
@@ -20,17 +18,26 @@ module.exports = {
     <%_ } else { _%>
     'plugin:vue/vue3-essential',
     <%_ } _%>
-    '@vue/prettier'
   ],
   parserOptions: {
     parser: 'babel-eslint',
   },
   rules: {
+    // base js rules
+    'max-len': ['error', { 'code': 120, 'ignoreUrls': true }],
+    'curly': ["error", "all"],
+    'object-curly-spacing': ["error", "always"],
+    'semi': ["error", "always"],
+    'quotes': ["error", "single"],
+    'indent': ["error", 2], // 缩进
+    'no-cond-assign': ['error', 'always'],
+    'no-const-assign': "error",
     'no-console': isProduction ? 'error' : 'off',
     'no-debugger': isProduction ? 'error' : 'off',
     'no-unused-vars': isProduction ? 'error' : 'warn', // Used for debug
     'no-unreachable': isProduction ? 'error' : 'warn', // Used for debug
     'space-before-function-paren': ['error', 'always'],
+    // vue rules
     <%_ if (options.version === 'v3') { _%>
     'vue/no-multiple-template-root': 'off', // off | error
     'vue/no-v-model-argument': 'off',
@@ -39,19 +46,11 @@ module.exports = {
     'vue/no-spaces-around-equal-signs-in-attribute': ['error'],
     'vue/require-default-prop': ['error'],
     'vue/require-prop-types': ['error'],
-    'vue/max-attributes-per-line': [
-      'error',
-      {
-        singleline: {
-          max: 3,
-          allowFirstLine: true
-        },
-        multiline: {
-          max: 1,
-          allowFirstLine: false
-        }
-      }
-    ],
+    "vue/script-indent": ["error", 2, { // script 不缩进
+      "baseIndent": 0,
+      "switchCase": 1,
+      "ignores": []
+    }],
     'vue/html-indent': [
       'error',
       2,
@@ -63,7 +62,24 @@ module.exports = {
         ignores: [],
       },
     ],
-     'vue/html-closing-bracket-newline': [
+    'vue/max-attributes-per-line': [
+      'error',
+      {
+        singleline: {
+          max: 3,
+          allowFirstLine: true,
+        },
+        multiline: {
+          max: 1,
+          allowFirstLine: false,
+        },
+      },
+    ],
+    // 'vue/first-attribute-linebreak': ["error", {
+    //   "singleline": "ignore",
+    //   "multiline": "below"
+    // }],
+    'vue/html-closing-bracket-newline': [
       'error',
       {
         singleline: 'never',
@@ -74,7 +90,7 @@ module.exports = {
       'error',
       {
         ignoreWhenNoAttributes: false,
-        ignoreWhenEmpty: false,
+        ignoreWhenEmpty: true,
         ignores: ['pre', 'textarea'],
       },
     ],
@@ -82,16 +98,6 @@ module.exports = {
       'error',
       {
         ignoreWhenBindingPresent: true,
-      },
-    ],
-    'prettier/prettier': [
-      'error',
-      {
-        endOfLine: isWindows ? 'crlf' : 'lf',
-        printWidth: 120, // 强制长度120字符
-        singleQuote: true, // 强制单引号
-        semi: true, // 强制分号结尾
-        // eslint 规则在此定义,后续根据需要进行添加或修改原有规则
       },
     ],
   },
