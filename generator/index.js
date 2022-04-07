@@ -28,7 +28,7 @@ module.exports = (api, options, rootOptions) => {
     'babel-eslint': '^10.1.0',
     'babel-plugin-transform-remove-console': '^6.9.4',
     'babel-plugin-transform-remove-debugger': '^6.9.4',
-    'eslint': '^6.7.2',
+    'eslint': '^7.0.0',
     "eslint-plugin-prettier": "^3.3.1",
     'eslint-plugin-import': '^2.20.2',
     'eslint-plugin-node': '^11.1.0',
@@ -86,7 +86,7 @@ module.exports = (api, options, rootOptions) => {
       },
       devDependencies: {
         '@vue/compiler-sfc': '^3.2.6',
-        'eslint-plugin-vue': '^7.0.0'
+        'eslint-plugin-vue': '^8.5.0'
       }
     })
   }

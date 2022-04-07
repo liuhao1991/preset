@@ -2,7 +2,7 @@
  * @Author: lh@metgs.com
  * @Date: 2020-08-24 09:19:04
  * @LastEditors: lh@metgs.com
- * @LastEditTime: 2022-03-24 14:04:24
+ * @LastEditTime: 2022-04-07 15:04:52
  * @Description: axios封装
  */
 import axios from 'axios'
@@ -108,3 +108,5 @@ function request (axiosConfig) {
   )
   return service(axiosConfig);
 }
+
+export default request;
