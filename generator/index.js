@@ -82,7 +82,8 @@ module.exports = (api, options, rootOptions) => {
       dependencies: {
         vue: '^3.2.6',
         'vue-router': '^4.0.11',
-        pinia: '^2.0.6'
+        pinia: '^2.0.6',
+        mitt: '^3.0.0'
       },
       devDependencies: {
         '@vue/compiler-sfc': '^3.2.6',
